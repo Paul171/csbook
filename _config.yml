@@ -1,0 +1,27 @@
+safe:        false
+port: 4000
+
+source:      .
+destination: /Users/ihower/Dropbox/www/cs
+plugins_dir:     ./_plugins
+
+future:      true
+lsi:         false
+highlighter:    true
+markdown:    kramdown
+permalink:   date
+
+kramdown:
+  auto_ids: true,
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+  syntax_highlighter_opts:
+    coderay_wrap: div
+    coderay_line_numbers: inline
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: style

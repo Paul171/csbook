@@ -15,7 +15,7 @@ title: 應用程式 App 開發基礎知識
 * [程式語言: 函數式程式設計](functional-programming.html)
 * [程式語言: 物件導向程式設計](object-oriented-programming.html)
 * [程式語言: 其他概念](programming-language-others.html)
-* [網頁設計] (web-design.html)
+* [網頁設計](web-design.html)
 * [命令列 Command Line Interface](cli.html)
 * [資料庫:基礎篇](database.html)
 * [資料庫:進階篇](database-part2.html)

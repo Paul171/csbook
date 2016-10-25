@@ -4,7 +4,7 @@ permalink: index.html
 title: 應用程式 App 開發基礎知識
 ---
 
-這份講義用於 [ALPHA Camp](https://www.alphacamp.co) Coding Bootcamp 的基礎課程，介紹開發應用程式(Web/Mobile App)的基礎知識。
+這份講義用於 [ALPHA Camp](https://www.alphacamp.co) Coding Bootcamp 的基礎課程，介紹應用程式(Web/Mobile App)的開發基礎知識。
 
 ## 目錄
 

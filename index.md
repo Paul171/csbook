@@ -25,7 +25,3 @@ title: 應用程式 App 開發基礎知識
 * [網路概論: 其他](networking-others.html)
 * [Web APIs 設計](web-apis.html)
 * [軟體工程](software-engineering.html)
-
-<!--
-
--->

@@ -10,7 +10,7 @@ title: 字元編碼 Encoding
    * 例如: 寫入檔案時空間不足、網路無法連線、除以 0
    * 多數高階語言都有支援 Exception Handling 機制，而 C 和 Go 沒有支援
  * 回傳錯誤碼: 例如函數成功執行回傳 0，出錯回傳非 0
-   * 範例 http://blog.golang.org/error-handling-and-go
+   * 範例 [Error handling and Go](http://blog.golang.org/error-handling-and-go)
  * 一般來說，高階的應用程式比較愛用例外處理(因為 calllstack 比較深，被 call 的程式不一定有處理錯誤的能力)、低階的系統程式愛用錯誤碼(因為你必須處理全部可能的錯誤) 
    * 試比較 Code 可讀性 和 程序員沒有處理 的情況
  * 例外處理的幾個階段
@@ -24,52 +24,51 @@ title: 字元編碼 Encoding
    * 丟出例外的口語意思是: 這個錯誤我也不知道怎麼處理，我希望有人會處理。如果最後沒有人處理，那就閃退吧! 
  * 錯誤處理也是 API 設計的一部分：有些會提供回傳錯誤碼的形式，有些則是用拋出例外：
    * 例如 Ruby 的 Hash： h[:foobar] 如果沒有值會回傳 nil，但是 h.fetch(:foobar) 則會丟出例外
- * 如何設計例外處理的補充投影片: http://www.slideshare.net/ihower/exception-handling-designing-robust-software-in-ruby
+ * 補充投影片: [如何設計例外處理](http://www.slideshare.net/ihower/exception-handling-designing-robust-software-in-ruby)
 
 
 ## 正規表示法 Regular expression
 
 
-一種精巧比對字串的方式
-http://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F
- * 線上工具
-   * http://rubular.com/
-   * https://regex101.com/
- * 例如
-   * 檢查 "Mississippi" 字串裡面有沒有出現 "ss" ?
-   * 找出每段文章中的第三個單字
-   * 將文章"開頭"中的 "Dear" 全部用 "Hi" 替換
-   * 將文章結尾的"."換成"。"
-   * 檢查是否是合法的 Email、URL 自串
- * 規則
-   * . 符合任何單一字元
-   * \w 單字字元
-   * \d 數字字元
-   * \s 任何空白
-   * \S 非空白
-   * ^ 行首位置
-   *  * 出現 0 次以上
-   * + 出現 1 次以上
-   * ? 出現 0 或 1 次
-   * {m,n} 出現 m 次到 n 次
-   * [a-z] a 到 z 範圍內的任何單一字元
-   * [^a-z] 非a-z 之外的任何單一字元 
-
-    http://www.jianshu.com/p/e7bb97218946
+* 一種精巧比對字串的方式
+* [Wikipedia: 正規表示式](http://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)
+* 線上工具
+  * <http://rubular.com/>
+  * <https://regex101.com/>
+* 用途舉例：
+  * 檢查 "Mississippi" 字串裡面有沒有出現 "ss" ?
+  * 找出每段文章中的第三個單字
+  * 將文章"開頭"中的 "Dear" 全部用 "Hi" 替換
+  * 將文章結尾的"."換成"。"
+  * 檢查是否是合法的 Email、URL 自串
+* 用法規則
+  * `.` 符合任何單一字元
+  * `\w` 單字字元
+  * `\d` 數字字元
+  * `\s` 任何空白
+  * `\S` 非空白
+  * `^` 行首位置
+  * `*` 出現 0 次以上
+  * `+` 出現 1 次以上
+  * `?` 出現 0 或 1 次
+  * `{m,n}` 出現 m 次到 n 次
+  * `[a-z]` a 到 z 範圍內的任何單一字元
+  * `[^a-z]` 非 a-z 之外的任何單一字元 
+* [知道這20個正則表達式，能讓你少寫1,000行代碼](http://www.jianshu.com/p/e7bb97218946)
 
 
 ## 時間處理 Time
 
 
- * UTC 時間格式 http://zh.wikipedia.org/wiki/%E5%8D%8F%E8%B0%83%E4%B8%96%E7%95%8C%E6%97%B6
- * Unix time 時間格式 http://en.wikipedia.org/wiki/Unix_time 計算從 1970-01-01 起跳的秒數，不建議使用這種格式。但有些老派的 API 仍會出現他的蹤影。
-   * 新聞 Apple's 'January 1, 1970' Date Bug http://www.macrumors.com/2016/02/15/apple-to-fix-january-1-1970-date-bug-ios/
-   * 2038 年問題 (因為 32-bit 的限制) https://zh.wikipedia.org/wiki/2038%E5%B9%B4%E9%97%AE%E9%A2%98
- * https://xkcd.com/1179/ ISO 8601 標準
- * 時區和日光節約時間的相關問題
-   * 只知道時間，不知道時區 -> 無法確定是那一天，不同時區會差一天
-   * 只知道時間，不知道確切日期 -> 直接加時間長度可能會不正確，因為可能剛好跨到日光節約時間
-   * 結論：用 Date 和 Time 的 library，而不要自己處理，因為日光節約時間沒有規則 https://www.iana.org/time-zones 
+* [UTC 時間](http://zh.wikipedia.org/wiki/%E5%8D%8F%E8%B0%83%E4%B8%96%E7%95%8C%E6%97%B6)
+* [Unix time 時間](http://en.wikipedia.org/wiki/Unix_time) 計算從 1970-01-01 起跳的秒數，不建議使用這種格式。但有些老派的 API 仍會出現他的蹤影。
+  * 新聞 [Apple's 'January 1, 1970' Date Bug](http://www.macrumors.com/2016/02/15/apple-to-fix-january-1-1970-date-bug-ios/)
+  * [2038 年問題](https://zh.wikipedia.org/wiki/2038%E5%B9%B4%E9%97%AE%E9%A2%98) (因為 32-bit 的限制)
+* 資料交換請用 [ISO 8601 標準格式](https://zh.wikipedia.org/wiki/ISO_8601)
+* 時區和日光節約時間的相關問題
+  * 只知道時間，不知道時區 -> 無法確定是那一天，不同時區會差一天
+  * 只知道時間，不知道確切日期 -> 直接加時間長度可能會不正確，因為可能剛好跨到日光節約時間
+  * 結論：用 Date 和 Time 的 library，而不要自己處理，因為日光節約時間[沒有規則](https://www.iana.org/time-zones)
 
 
 ## 資料存續和交換 Data Persistence and Exchange
@@ -85,9 +84,9 @@ http://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F
      * JSON
      * YAML
    * Binary 類型
-     * https://github.com/google/protobuf/ (google)
-     * https://thrift.apache.org/ (facebook)
-     * http://msgpack.org/
+     * [Protobuf](https://github.com/google/protobuf/) (google)
+     * [Thrift](https://thrift.apache.org/) (facebook)
+     * [Mespack](http://msgpack.org/)
    * 哪一種電腦處理比較有效率? 
    * 哪一種經過長久時間仍能打開讀取?
 
@@ -102,8 +101,8 @@ http://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F
 * Non-Persistent Storage，主要是快取用途
    * Memcached
  * 不同資料庫有不同設計 trade-off，包括讀取速度、寫入速度、擴充性和查詢能力
-* Why 快取?  https://ihower.tw/rails4/caching.html
-* Latency Numbers Every Programmer Should Know https://gist.github.com/jboner/2841832
+* [為何要使用快取?](https://ihower.tw/rails4/caching.html)
+* [Latency Numbers Every Programmer Should Know](https://gist.github.com/jboner/2841832)
 
 
 ## 垃圾回收 Garbage Collection (GC)
@@ -144,10 +143,10 @@ http://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F
 
 例如：
 
-* Ruby 的套件管理工具是 https://rubygems.org/ 和 http://bundler.io/
-* Node.js 的套件管理工具是 https://www.npmjs.com/
-* PHP 的套件管理工具是 https://getcomposer.org/
-* Swift 可用 https://cocoapods.org/ (非 Apple 官方)
+* Ruby 的套件管理工具是 <https://rubygems.org/> 和 <http://bundler.io/>
+* Node.js 的套件管理工具是 <https://www.npmjs.com/>
+* PHP 的套件管理工具是 <https://getcomposer.org/>
+* Swift 可用 <https://cocoapods.org/> (非 Apple 官方)
 
 別跟 homebrew 搞混了，上述的套件管理工具是管理「程式碼」套件，而 homebrew 是我們在 Mac 上管理「Command Line 工具」的套件。之後我們在 Ubuntu Linux 上，還會用一個套件管理工具叫做 `apt-get` 用來在伺服器上安裝軟體。
 

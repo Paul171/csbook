@@ -6,6 +6,8 @@ title: 函數式程式設計 Functional Programming
 
 # 函數式程式設計 Functional Programming
 
+> 範例程式 Sample Code: <https://github.com/ihower/intro-to-programming-code> (JavaScript、Ruby 和 Swift)
+
 進階篇討論的重點在於如何組織程式碼，達成易讀、好測試、好擴充、好維護的程式
 
 > [論「為什麼學校教不出好的程式設計師？」](https://www.facebook.com/softdevtools/posts/305785376123355)
@@ -30,32 +32,32 @@ Pure 純粹 (Pure) 的 Functional Programming Language 雖然過於學術不是�
 * Closure 特性，函式內可以讀取到函數外的變數，但是不會覆蓋掉，是個非常方便好用的 scope 特性。
 
 
-    // 範例程式 closure.js
-    var foo = 1;
-    var bar = function() {
-      console.log("inside foo: " + foo);
-    }
+        // 範例程式 closure.js
+        var foo = 1;
+        var bar = function() {
+          console.log("inside foo: " + foo);
+        }
 
-    bar(); // foo 是多少?
+        bar(); // foo 是多少?
 
-    var baz = function() {
-      var foo = 2
-      console.log("inside foo : " + foo);
-    }
-    baz(); // foo 是多少?
-    console.log("outside foo: " + foo); // foo 是多少?
+        var baz = function() {
+          var foo = 2
+          console.log("inside foo : " + foo);
+        }
+        baz(); // foo 是多少?
+        console.log("outside foo: " + foo); // foo 是多少?
 
 * 有些程式語言的 function 定義就帶有 Closure 特性，例如 JavaScript, Scala, Swift。有些則需要用不同的語法，例如 Ruby, Objective-C
      * 在 JavaScript 中:  `function foo() { .... }` 和 `var foo = function() { ... }` 兩者都有 Closure 特性
      * 在 Ruby 中: `def foo` 則沒有 Closure 特性，要 `do ... end` 才有
-   * Swift Closure 的 `func` 就有 Closure 特性 https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html
+   * [Swift Closure](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html) 的 `func` 就有 Closure 特性
 
 ### Combinator functions: 處理容器的基本三招
 
  1. filter 2. map 3. reduce (or fold) 很多其他操作都是基於此。這三招又叫作 Combinators，是厲害的 reusable 建構演算法可以組合出複雜的運算。
-   * Map https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
-   * Filter https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-   * Reduce https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+   * [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+   * [Filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+   * [Reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
    * 範例
      * 沒有用 Combinator 之前 combinator-no.js
      * 用了 Combinator 變成 combinator-yes.js
@@ -63,5 +65,5 @@ Pure 純粹 (Pure) 的 Functional Programming Language 雖然過於學術不是�
 
 
 ### FP 的補充資料
-   * 那些 Functional Programming 教我的事 投影片 https://ihower.tw/blog/archives/6513
-   * Functional Programming for Java Developers 讀書摘要 https://ihower.tw/blog/archives/6305
+   * [那些 Functional Programming 教我的事 投影片](https://ihower.tw/blog/archives/6513)
+   * [Functional Programming for Java Developers](讀書摘要 https://ihower.tw/blog/archives/6305)

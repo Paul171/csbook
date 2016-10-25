@@ -6,8 +6,7 @@ title: 程式語言:基礎篇
 
 # 程式語言:基礎篇
 
-
-範例程式 Sample Code: https://github.com/ihower/intro-to-programming-code (JavaScript、Ruby 和 Swift)
+> 範例程式 Sample Code: <https://github.com/ihower/intro-to-programming-code> (JavaScript、Ruby 和 Swift)
 
 ## 什麼是程式語言
 
@@ -24,15 +23,15 @@ title: 程式語言:基礎篇
   * 程式碼寫起來很費事，但電腦跑起來很快
   * 不同硬體的 CPU 指令集不一樣，例如 Intel x86 和 ARM 不一樣、64位元和32位元也不一樣
   * 執行一行一行的 code instructions，例如將資料從記憶體搬進 CPU 暫存器，接著叫 CPU 進行計算，然後將結果從暫存器搬回記憶體
-    * http://en.wikipedia.org/wiki/Machine_code
-    * http://en.wikipedia.org/wiki/Assembly_language
-    * 組語範例 http://ccckmit.wikidot.com/as:msexample
+    * [Wikipedia: Machine code](http://en.wikipedia.org/wiki/Machine_code)
+    * [Wikipedia: Assembly language](http://en.wikipedia.org/wiki/Assembly_language)
+    * [組語範例](http://ccckmit.wikidot.com/as:msexample)
     * 不同 CPU 的機器碼、組合組言是不一樣的，例如 [Intel x86](https://zh.wikipedia.org/zh-tw/X86) 和 [ARM](https://zh.wikipedia.org/wiki/ARM%E6%9E%B6%E6%A7%8B) CPU。還有分 32位元或64位元。
 * 高階語言
   * C 語言、Java 語言、PHP/Python/Ruby 等等
   * 透過結構化程式設計，開發比較好寫，包括 function 子程式、程式碼區塊、for迴圈以及while迴圈等等結構
   * Source Code 純文字檔案經過編譯後(Compile)轉成二進位的機器碼  
-  * 第一個C語言編譯器是怎樣編寫的？ http://news.cnblogs.com/n/533687/
+  * [第一個C語言編譯器是怎樣編寫的？](http://news.cnblogs.com/n/533687/)
 * 為何有不同的程式語言？
   * 效率的定義(是執行快? 還是開發快? )：機器語言 -> 組合語言 -> C 語言 -> Java 語言 -> 動態語言
   * 程式語言設計者的設計哲學不同，有些喜歡設計功能多、程式碼比較有表現力。有些喜歡設計功能進可以必要少，比較簡單但打比較多字。
@@ -48,9 +47,9 @@ title: 程式語言:基礎篇
 <a href="http://carlcheo.com/wp-content/uploads/2014/12/which-programming-language-should-i-learn-first-infographic.png" target="_blank"><img src="http://carlcheo.com/wp-content/uploads/2014/12/which-programming-language-should-i-learn-first-infographic.png" width="600"></a>
 
 * 各種排名 
-  * http://www.sitepoint.com/whats-best-programming-language-learn-2015/
-  * http://www.inside.com.tw/2014/11/21/these-programming-skills-will-earn-you-the-most-money
-  * http://www.greycampus.com/blog/programming/highest-paying-programming-languages-in-2016
+  * <http://www.sitepoint.com/whats-best-programming-language-learn-2015/>
+  * <http://www.inside.com.tw/2014/11/21/these-programming-skills-will-earn-you-the-most-money>
+  * <http://www.greycampus.com/blog/programming/highest-paying-programming-languages-in-2016>
 * 電腦軟體可以分成
   * 系統軟體：作業系統、程式語言、編譯器、嵌入式系統等等，不希望有任何效能損耗，需要了解硬體、操控硬體，例如記憶體空間
   * 應用軟體：各種 App、桌面軟體、手機軟體、Web 應用等，效能上可以有 trade-off，好寫好改 vs. 程式執行效能，來因應變來變去的商務需求
@@ -96,7 +95,7 @@ title: 程式語言:基礎篇
   * Web 跨平台 vs. Java 跨平台有何不同?
 * [抽象滲漏法則](http://local.joelonsoftware.com/wiki/The_Joel_on_Software_Translation_Project:%E6%8A%BD%E8%B1%A1%E6%BB%B2%E6%BC%8F%E6%B3%95%E5%89%87)
 * 論「使用哪一種程式語言真的不重要，只要能解決問題」？
-  * http://www.ithome.com.tw/voice/92041
+  * [程式語言沒什麼好學的？](http://www.ithome.com.tw/voice/92041)
   * 為什麼要背九九乘法表?
 
 ## 程式語言的分類：動態語言和靜態語言
@@ -107,9 +106,9 @@ title: 程式語言:基礎篇
   * JavaScript, Ruby, PHP, Python 是動態語言
   * Swift, Java, C#, C++, C 是靜態語言
   * 優缺點? 1. 開發效率 v.s. 執行效率 2. compile 時可以檢查類型錯誤
-  * 近年來由於編譯器的進步，例如類型推導等技術讓靜態語言開發的效率也提升了，因此又看漲了。動態語言陣營也發展出有 type 的用法 http://www.typescriptlang.org/, http://flowtype.org/，和 Ruby 3.0 的 soft type。
+  * 近年來由於編譯器的進步，例如類型推導等技術讓靜態語言開發的效率也提升了，因此又看漲了。動態語言陣營也發展出有 type 的用法 [TypeScript](http://www.typescriptlang.org/), [flow](http://flowtype.org/)，和 Ruby 3.0 的 soft type。
 
-以下節錄自 https://ihower.tw/rails4/intro.html
+以下節錄自 <https://ihower.tw/rails4/intro.html>
 
 為什麼開發伺服器端應用程式，使用動態語言(Ruby、Python、PHP、Perl等)比起靜態語言(Java、C++等)有更好的優勢呢？
 
@@ -169,13 +168,13 @@ title: 程式語言:基礎篇
   * Hash 轉成 Array
   * Array 轉成 Hash
 * 熟習程式語言內建提供哪些操作資料的 API 是基本功
-  * Ruby#String http://ruby-doc.org/core-2.2.3/String.html
-  * Ruby#Array http://ruby-doc.org/core-2.2.3/Array.html
-  * Ruby#Hash http://ruby-doc.org/core-2.2.3/Hash.html
-  * JS#String https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-  * JS#Array https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-  * Swift#String https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html
-  * Swift#Collection https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html
+  * [Ruby#String](http://ruby-doc.org/core-2.2.3/String.html)
+  * [Ruby#Array](http://ruby-doc.org/core-2.2.3/Array.html)
+  * [Ruby#Hash](http://ruby-doc.org/core-2.2.3/Hash.html)
+  * [JS#String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+  * [JS#Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+  * [Swift#String](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html)
+  * [Swift#Collection](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html)
 
 ## 變數和作用域 Variable and Scope 
 
@@ -279,11 +278,11 @@ title: 程式語言:基礎篇
 
 ## 參考資料
 
-* Standford University: Computer Science 101 https://lagunita.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/
-* 代碼之髓：編程語言核心概念 http://www.ptpress.com.cn/Book.aspx?id=38891
-* 松本行弘的程式世界：成為一流程式設計師的14種思考術 http://www.books.com.tw/products/0010476366
+* [Standford University: Computer Science 101](https://lagunita.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/)
+* [代碼之髓：編程語言核心概念](http://www.ptpress.com.cn/Book.aspx?id=38891)
+* [松本行弘的程式世界：成為一流程式設計師的14種思考術](http://www.books.com.tw/products/0010476366)
 * 演算法的樂趣, 基峰
-* Introduction to Programming with Ruby http://www.gotealeaf.com/books/ruby
-* Object Oriented Programming with Ruby http://www.gotealeaf.com/books/oo_ruby
-* Seven Languages in Seven Weeks https://pragprog.com/book/btlang/seven-languages-in-seven-weeks
+* [Introduction to Programming with Ruby](http://www.gotealeaf.com/books/ruby)
+* [Object Oriented Programming with Ruby](http://www.gotealeaf.com/books/oo_ruby)
+* [Seven Languages in Seven Weeks](https://pragprog.com/book/btlang/seven-languages-in-seven-weeks)
 * Ruby 物件導向設計實踐

@@ -6,14 +6,13 @@ title: 物件導向 Object-Oriented Programming
 
 # 物件導向 Object-Oriented Programming
 
-範例程式 Sample Code: https://github.com/ihower/intro-to-programming-code (JavaScript、Ruby 和 Swift)
+> 範例程式 Sample Code: <https://github.com/ihower/intro-to-programming-code> (JavaScript、Ruby 和 Swift)
 
 ### Why 物件導向? Why 應用程式適合物件導向? 
 
 * 演算法和資料結構：正確性和高效能
 * 物件導向：追求 擴充性、維護性、修改彈性、可讀性、可測性。將程式碼適當安排組織的一種設計方式
-* 參考投影片 https://www.slideshare.net/ihower/classes-objects-oop p.8 ~ 19
- * Wikipedia 條目: http://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1
+* [Wikipedia: 物件導向程式設計](http://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1)
 
 ## 什麼是物件導向?
 
@@ -63,7 +62,7 @@ title: 物件導向 Object-Oriented Programming
      * Java、Swift、Obj-C: 可以繼承多重介面(叫做 interface 或 protocol，介面指的是方法名稱和參數列)，但實作部分(指的是方法裡面的程式)則沒有辦法多重繼承，範例程式: oo-protocol.swift
      * Ruby: 用 mix-in 可以繼承多重實作，範例程式: oo-mixin.rb
  * 動態語言更常用 Duck Typing 來達成多型。靜態語言則堅持型別檢查，因此必須滿足繼承條件，才可以達成多型。
-   * http://zh.wikipedia.org/wiki/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B
+   * [Wikipedia: 鴨子型別](http://zh.wikipedia.org/wiki/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B)
    * 動態語言沒有辦法在 compile-time 做 Type Checking，因此有可能在 run-time 呼叫方法時，才發現 No Method Error 等型別錯誤。
    * 靜態語言會在編譯時會檢查物件的型別，例如參數會限制一定是哪一種類別產生出來的物件。動態語言則不會檢查，採用 Duck typing，一直到真正執行的時候如果 type 不合(例如字串和整數相加)才會發生錯誤
    * 範例程式:  oo-ducktype.rb 和 oo-typecheck1.swift, oo-typecheck2.swift
@@ -84,7 +83,7 @@ Class-based 的物件導向語言，都是要先定義什麼是類別，然後�
 ### 其他注意事項
 
  * 參數傳遞方式
-   * http://en.wikipedia.org/wiki/Evaluation_strategy
+   * [Wikipedia: 求值策略](http://en.wikipedia.org/wiki/Evaluation_strategy)
    * call by value
    * call by reference(address) 
    * call by object
@@ -93,9 +92,9 @@ Class-based 的物件導向語言，都是要先定義什麼是類別，然後�
    * 通常程式語言會另提供一個 shallow clone/copy 的方式來複製物件
  * OOP 中，很少 global function，function 都定義在物件(透過類別)裡面。相關連的變數也都一起包裹在物件裡面。
    * 比較看看不同程式語言的 OO 設計
-   * PHP http://php.net/manual/en/ref.strings.php 非常多 global function
-   * Python https://docs.python.org/3/library/functions.html 少數的 global function
-   * Ruby http://ruby-doc.org/core-2.2.0/String.html 都是物件方法
+   * PHP [String Functions](http://php.net/manual/en/ref.strings.php) 非常多 global function
+   * Python [Built-in Functions](https://docs.python.org/3/library/functions.html) 少數的 global function
+   * Ruby [String Methods](http://ruby-doc.org/core-2.2.0/String.html) 都是物件方法
 
 ## 物件導向設計：設計原則和設計模式
 
@@ -104,7 +103,7 @@ Class-based 的物件導向語言，都是要先定義什麼是類別，然後�
    * 針對特定的情境，提供設計解法(通常是如何設計你的類別)，並且「命名」這些模式讓程序員可以方便溝通和當作命名的元素。
    * [設計模式](http://zh.wikipedia.org/wiki/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E5%8F%AF%E5%A4%8D%E7%94%A8%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BD%AFE4%BB%B6%E7%9A%84%E5%9F%BA%E7%A1%80)，例如 Factory, Adapter, Composite, Decorator, Iterator, Observer 這些常見模式
      * 範例: oo-strategy.rb, oo-template.rb
-   * 推薦這本 http://www.tenlong.com.tw/items/9867794524?item_id=33235
+   * 推薦這本 [深入淺出設計模式](https://www.tenlong.com.tw/items/9867794524?item_id=33235)
 
  * 討論: 為什麼用 OOA&D 和 UML 設計軟體的方式逐漸式微?  
 

@@ -8,10 +8,10 @@ title: 程式設計基礎
 
  * 目標讀者: 程式設計初學者
  * 目的: 了解程式語言基本語法，包括標準輸出輸入、控制流程、變數、資料類型(數字、字串)、函式、陣列、雜湊、物件、檔案
- * Example Code: https://github.com/ihower/programming-basics
+ * Example Code: <https://github.com/ihower/programming-basics>
  * 使用環境
-   * Mac: 使用內建的 Ruby 和編輯器 https://www.sublimetext.com/
-   * Non-Mac: 使用 https://c9.io/ 開一個 Custom 的 workspace
+   * Mac: 使用內建的 Ruby 和編輯器 <https://www.sublimetext.com/>
+   * Non-Mac: 可使用 <https://c9.io/> 開一個 Custom 的 workspace
 
 ## 1. 基本元素: 輸入、計算、輸出
 
@@ -93,7 +93,7 @@ title: 程式設計基礎
    * 使用者不斷輸入數字存進 Array，最後輸出總和、平均、最大值、最小值
    * 建構一個陣列有一百個的元素，內容是 0, 1, 4, 9, 16, 25...... 每個元素是該索引的平方
    * 給定一陣列內含數字，請輸出 0~9 中不見的數字。例如 arr = [2,2,1,5,8,4]，輸出 [0,3,6,7,9]
-   * 實作選擇排序法 https://zh.wikipedia.org/wiki/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F
+   * 實作[選擇排序法](https://zh.wikipedia.org/wiki/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F)
 
 ## 5. 資料結構: 雜湊 Hash
 
@@ -113,15 +113,15 @@ title: 程式設計基礎
 ## 7. 資料結構: 物件 Object
 
  * 內建的 Object
-   * String http://ruby-doc.org/core-2.3.0/String.html
+   * [String](http://ruby-doc.org/core-2.3.0/String.html)
      * 將字串拆解成陣列
-   * Float http://ruby-doc.org/core-2.3.0/Float.html
+   * [Float](http://ruby-doc.org/core-2.3.0/Float.html)
      * 四捨五入
-   * Array http://ruby-doc.org/core-2.2.3/Array.html
+   * [Array](http://ruby-doc.org/core-2.2.3/Array.html)
      * 將陣列串接成字串
        * push
      * delete_at
-   * Hash http://ruby-doc.org/core-2.2.3/Hash.html
+   * [Hash](http://ruby-doc.org/core-2.2.3/Hash.html)
      * keys
      * values
  * 透過 Class 類別來自訂 Object
@@ -151,8 +151,8 @@ title: 程式設計基礎
 
 ## 參考資料
 
- * 啊哈C！蹲馬桶就能看懂程式的邏輯訓練 http://www.books.com.tw/products/0010630098
- * Exercises for Programmers https://pragprog.com/book/bhwb/exercises-for-programmers
- * Computer Science Programming Basics in Ruby http://shop.oreilly.com/product/0636920028192.do
- * Swift 程式設計入門 http://www.books.com.tw/products/0010668967
+ * [啊哈C！蹲馬桶就能看懂程式的邏輯訓練](http://www.books.com.tw/products/0010630098)
+ * [Exercises for Programmers](https://pragprog.com/book/bhwb/exercises-for-programmers)
+ * [Computer Science Programming Basics in Ruby](http://shop.oreilly.com/product/0636920028192.do)
+ * [Swift 程式設計入門](http://www.books.com.tw/products/0010668967)
 

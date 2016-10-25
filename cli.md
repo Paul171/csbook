@@ -10,7 +10,7 @@ title: 命令列 Command Line Interface
 * Mac 和 Linux 都是 [UNIX-like](https://zh.wikipedia.org/wiki/%E7%B1%BBUnix%E7%B3%BB%E7%BB%9F) 作業系統，這也是為什麼 Web Developer 愛用 Mac 的原因，因為作業系統架構和 CLI 指令跟 Linux 伺服器類似，因此可以跑在 Linux 上的開源軟體(特別是 Web 後端用到的軟體，例如各種資料庫、網站伺服器、Ruby/Python/PHP 程式語言等等) 也都支援 Mac，反而 Windows 支援比較差。
 * [Unix 哲學](https://zh.wikipedia.org/wiki/Unix%E5%93%B2%E5%AD%A6): Do One Thing Well：指令只做一件事，但可以透過串接來達成複雜的操作
 
-![history](http://www.oliverelliott.org/static/article/img/Unix_timeline_800.png)
+![history](http://www.oliverelliott.org/static/article/img/Unix_timeline_800.png) 
 
 * 名詞釋疑: Terminal, Console 和 Shell
   * Terminal 是指 CLI 的輸入輸出介面程式，例如 mac 內建的 Terminal，或是另外裝的 iTerm2。使用 Terminal 時會需要設定要用哪一種 Shell。
@@ -19,10 +19,10 @@ title: 命令列 Command Line Interface
 
 ## Terminal 視窗
 
- * Tab Completion 自動完成
- * iTerm 快速鍵秘訣
-   * http://www.swiftcafe.io/2015/07/25/iterm/index.html
-   * http://taian.su/2012-10-11-an-apple-hotkey-a-day/
+* Tab Completion 自動完成
+* iTerm 快速鍵秘訣
+  * [iTerm - 讓你的命令行也能豐富多彩](http://www.swiftcafe.io/2015/07/25/iterm/index.html)
+  * [An Apple Hotkey a day](http://taian.su/2012-10-11-an-apple-hotkey-a-day/)
 * Control+c 取消目前指令
 * Control+z 中斷目前指令
 * Control+a and Control-e 跳到指令最前、最後
@@ -85,7 +85,7 @@ title: 命令列 Command Line Interface
 * `grep` 比對檔案內容
  * `tar` 和 `gzip` 打包目錄和解壓縮
 
-> 竟然有人真的實驗看看 rm -fr / 會怎麼樣，原來下場這樣...... 是蠻慘的 https://www.youtube.com/watch?v=KIyCYtu3pp0
+> 竟然有人真的[實驗看看 rm -fr /](https://www.youtube.com/watch?v=KIyCYtu3pp0) 會怎麼樣，原來下場這樣...... 是蠻慘的
 
 ### Links
 
@@ -152,17 +152,14 @@ title: 命令列 Command Line Interface
 
 ## Mac only
 
-http://www.mitchchn.me/2014/os-x-terminal/
-https://github.com/herrbischoff/awesome-osx-command-line
-
- * open -a
-   * open finder
-   * open webpage
-   * open file
- * pbcopy 和 pbpaste
- * command+tab
- * command+w
- * command+q
+* [Eight Terminal Utilities Every OS X Command Line User Should Know](http://www.mitchchn.me/2014/os-x-terminal/)
+* [Use your OS X terminal shell to do awesome things](https://github.com/herrbischoff/awesome-osx-command-line)
+* `open .` 用 Finder 打開當前目錄
+* `open` 檔名，加上 `-a` 參數可以指定用什麼程式打開，例如 `open -a Safari index.html`
+* pbcopy 和 pbpaste
+* command+tab
+* command+w
+* command+q
 * homebrew 有更多 CLI 工具
   * `brew install youtube-dl`
 
@@ -170,11 +167,10 @@ https://github.com/herrbischoff/awesome-osx-command-line
 
 * [Unix/Linux 命令参考 ](http://i.linuxtoy.org/files/pdf/fwunixref.pdf)
 * [The Command Line Crash Course](http://cli.learncodethehardway.org/book/)
-* https://launchschool.com/books/command_line/read/introduction
- * https://www.codecademy.com/courses/learn-the-command-line
- * [Treehouse: Console Foundation](https://teamtreehouse.com/library/console-foundations)
- * An Introduction to Unix http://www.oliverelliott.org/article/computing/tut_unix/
- * edx: Introduction to Linux https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-2
- * The Linux Command Line 簡中版 http://billie66.github.io/TLCL/
- * https://github.com/jlevy/the-art-of-command-line
- * Eight Terminal Utilities Every OS X Command Line User Should Know http://www.mitchchn.me/2014/os-x-terminal/
+* [INTRODUCTION TO THE COMMAND LINE](https://launchschool.com/books/command_line/read/introduction)
+* [Learn the Command Line](https://www.codecademy.com/courses/learn-the-command-line)
+* [Treehouse: Console Foundation](https://teamtreehouse.com/library/console-foundations)
+* [An Introduction to Unix](http://www.oliverelliott.org/article/computing/tut_unix/)
+* [edx: Introduction to Linux](https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-2)
+* [The Linux Command Line 簡中版](http://billie66.github.io/TLCL/)
+* [Master the command line, in one page](https://github.com/jlevy/the-art-of-command-line)

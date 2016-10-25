@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: database-2.html
+permalink: database-part2.html
 title: 資料庫:進階篇
 ---
 

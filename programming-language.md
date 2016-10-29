@@ -151,8 +151,9 @@ title: 程式語言:基礎篇
     * [Integer](https://en.wikipedia.org/wiki/Integer_(computer_science)) 整數: 電腦內部用[補數表示法](https://zh.wikipedia.org/wiki/%E4%BA%8C%E8%A3%9C%E6%95%B8)轉成二進位儲存 
     * Decimal 固定整數部分和小數部分的位數，可以精準表示，但缺點是無法描述很大或很小的數字
   * Boolean
+  * Struct 具有屬性的複合資料類型 (JavaScript 無，Swift 有)
   * JavaScript 中只有 undefined 、 null 、 boolean 、 number 、 string 五種Primitive type
-* Reference/Object Data Types 複合資料類型，包括：
+* Reference/Object Data Types 參考資料類型，包括：
   * 程式語言內建的 Data Type (資料結構、容器)，最常見是：
     * Array 有序容器，用整數當作索引
     * Hash (或稱作 Map 或 Dictionary ) 一種 Key-Value 的容器，用字串當作索引

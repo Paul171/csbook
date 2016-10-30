@@ -53,6 +53,7 @@ title: "網路概論: TCP/IP 和 DNS"
 
 ## 補充資料
 
+* [網路架構大概論：歷史、規格、名詞一次搞懂](http://www.techbang.com/albums/107)
 * [鳥哥的 Linux 私房菜: 基礎網路概念](http://linux.vbird.org/linux_server/0110network_basic.php)
 * [我是一個網卡](http://gold.xitu.io/entry/5763cb427f578500546c91d4)
 * [網路非常概論](http://www.slideshare.net/GuanHsiungLiaw/ss-52836041)

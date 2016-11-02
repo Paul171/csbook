@@ -47,19 +47,19 @@ title: 資料庫:基礎篇
    * Shared database Integration (with integrity constraint)
    * Standard Model for everyone (using SQL)
 
-##  Databases Systems
+## Databases Systems
 
- * 開源
-   * SQLite3 (嵌入式)
+* 開源
+  * SQLite3 (嵌入式)
      * Mac 上就有內建 sqlite3 指令
      * GUI: [DB Browser for SQLite](http://sqlitebrowser.org/)
      * GUI: [Firefox Add-Ons: SQLite Manager](https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/)
-   * MySQL
+  * MySQL
      * GUI: [Sequel Pro](http://www.sequelpro.com/)
      * TABLE 又分不同 ENGINE 實作，InnoDB 和  MyISAM
-   * PostgreSQL
+  * PostgreSQL
      * GUI: [pgAdmin](https://www.pgadmin.org/)
-     * 非開源: Oracle、MS SQL Server 等等
+* 非開源: Oracle、MS SQL Server 等等
 
 建議用 Homebrew 來安裝最新版的 SQLite3、MySQL、PostgreSQL
 

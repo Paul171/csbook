@@ -10,7 +10,7 @@ title: 命令列 Command Line Interface
 * Mac 和 Linux 都是 [UNIX-like](https://zh.wikipedia.org/wiki/%E7%B1%BBUnix%E7%B3%BB%E7%BB%9F) 作業系統，這也是為什麼 Web Developer 愛用 Mac 的原因，因為作業系統架構和 CLI 指令跟 Linux 伺服器類似，因此可以跑在 Linux 上的開源軟體(特別是 Web 後端用到的軟體，例如各種資料庫、網站伺服器、Ruby/Python/PHP 程式語言等等) 也都支援 Mac，反而 Windows 支援比較差。
 * [Unix 哲學](https://zh.wikipedia.org/wiki/Unix%E5%93%B2%E5%AD%A6): Do One Thing Well：指令只做一件事，但可以透過串接來達成複雜的操作
 
-![history](http://www.oliverelliott.org/static/article/img/Unix_timeline_800.png) 
+![history](http://www.oliverelliott.org/static/article/img/Unix_timeline_800.png)
 
 * 名詞釋疑: Terminal, Console 和 Shell
   * Terminal 是指 CLI 的輸入輸出介面程式，例如 mac 內建的 Terminal，或是另外裝的 iTerm2。使用 Terminal 時會需要設定要用哪一種 Shell。
@@ -100,8 +100,7 @@ title: 命令列 Command Line Interface
 
 * 每個檔案和目錄可以設定屬於哪一個用戶、哪一個群組
 * 每個檔案和目錄都有權限設定：(你自己, 群組, 全部使用者) x (讀取, 寫入, 可執行) 共有九碼
-* [檔案目錄權限]
-(http://tnrc.ncku.edu.tw/course/93/fedora_core2/page10/p10.htm)
+* [檔案目錄權限](http://tnrc.ncku.edu.tw/course/93/fedora_core2/page10/p10.htm)
   * Read(可讀)  r 4
    * Read,Write,eXcute  rwx 4+2+1=7
    * Read,eXcute  r-x 4+1=5

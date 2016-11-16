@@ -38,9 +38,7 @@ title: "網路概論: TCP/IP 和 DNS"
 ### TCP/UDP  封包
 
 * IP 封包有地址可以抵達對方電腦，但是一台電腦上有很多不同種類的應用程式，到底這個封包是要給哪一個程式去處理?
-* [UDP和TCP封包](http://www.techbang.com/posts/15859-network-architecture-2-arpanet-history-and-introduction-to-mac-ip-dns-concepts-review?page=4)
-  * 用來定義 Port number，一台電腦上不同的應用程式就用不同的 Port
-* TCP/UDP 封包定義了 Port 來源埠和目的埠，就像不同碼頭，編號從 0~65535，詳見 [TCP/UDP埠列表](https://zh.wikipedia.org/zh-tw/TCP/UDP%E7%AB%AF%E5%8F%A3%E5%88%97%E8%A1%A8)
+* [UDP和TCP封包](http://www.techbang.com/posts/15859-network-architecture-2-arpanet-history-and-introduction-to-mac-ip-dns-concepts-review?page=4)定義了 Port number 來源埠和目的埠。就像不同碼頭，編號從 0~65535，詳見 [TCP/UDP埠列表](https://zh.wikipedia.org/zh-tw/TCP/UDP%E7%AB%AF%E5%8F%A3%E5%88%97%E8%A1%A8)，一台電腦上不同的應用程式就會用不同的 Port。
   * 每一個需要用到網路的程式，都必須跟作業系統登記要一個 Port 來使用。如果你要編號 1024 以下的話，作業系統還會要求你有 root 權限。
 * IP 封包並不會保證封包抵達的正確性，[TCP](https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE) 實作了更多步驟來保證資料傳輸的順序、重發遺失的封包、捨棄重複的封包、無錯誤資料傳輸、阻塞/流量控制、確認有建立三方交握，連線已建立才作傳輸等等。UDP 則無。
   * 為什麼 HTTP 使用 TCP，而 Real-Time 視訊串流通訊協定較多用 UDP?  例如 RTSP、RTP、H.323、SIP 等等
@@ -48,7 +46,7 @@ title: "網路概論: TCP/IP 和 DNS"
   * ping 指令
   * traceroute 指令
 * 網路工具
-  * Wireshark https://zh.wikipedia.org/wiki/Wireshark 網路封包擷取
+  * [Wireshark](https://zh.wikipedia.org/wiki/Wireshark)  網路封包擷取
   * ifconfig 指令可以查看網卡資訊
 
 ## 補充資料

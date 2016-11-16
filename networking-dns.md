@@ -49,8 +49,8 @@ title: "網路概論: DNS"
 ## 購買 Domain Name 和設定 DNS
 
 * 推薦在 NameCheap 買網域，請點這個 referral URL 註冊: <https://www.namecheap.com/?aff=91800> 讓 ALPHACamp Dojo 賺 15% 傭金
-* 假設購買 example.com，可以讓 1. Nameserver 代管 DNS，或改用 2. Linode 的 DNS：
-* 讓 NameCheap 代管 DNS：
+* 假設購買 example.com，可以讓 1. NameCheap 代管 DNS，或改用別家 2. 我們自己設定的 DNS，例如之後購買虛擬主機 [Linode](https://www.linode.com/) 會有 DNS 可以用，或是用免費的 [Cloudflare](https://www.cloudflare.com)
+* 如果要讓 NameCheap 代管 DNS 的話：
   * Advanced DNS -> Domain Nameserver Type 選 Namecheap Default
   * Advanced DNS -> Host Records -> Manage -> ADD RECORDS
     * 新增 A Record，設定 host 是 @ 指向你的 server ip (這表示 example.com )

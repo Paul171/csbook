@@ -6,9 +6,7 @@ title: Web APIs 設計
 
 # Web APIs 設計
 
-## Web APIs REST 基礎
-
-### 學習目的
+## 學習目的
 
 * 目標讀者: 應用程式初學開發者，特別是 Application Developer
 * 目的: 了解 Web APIs 該如何設計，有哪些設計上的考量。讓前後端合作起來能夠更順利。
@@ -18,8 +16,10 @@ title: Web APIs 設計
   * 提供給手機 iOS, Android 應用程式的 Web API  
   * 提供 JavaScript MVC application 的 Web API
   * 建立 API 平台，開放 APIs 給第三方開發者使用
+   
+## REST 基礎
 
- ### 什麼是 REST?
+### 什麼是 REST?
 
 * 為何要設計 Web APIs? 為什麼採用 REST? 
 * 目前的主流風格(Style):  REST
@@ -33,7 +33,7 @@ title: Web APIs 設計
   * Layered 伺服器端可以有分層的架構，例如 Reserve-proxy Server 或 Load balancer
   * Stateless 不同的API呼叫之間是沒有前後文關係的，具有無狀態性。因為網路的不穩定性 1. 每次的 Request 必須帶有足夠的資訊讓伺服器端可以處理，例如帶有 token 可以讓伺服器識別是哪一個用戶 2. 每一個 Request 操作都必須是 atomic 的，不應該用兩個 requests 去完成一個應該一起完成或一起失敗的動作，就像 DB 的 transaction 一樣。
   * Uniform interface 一致的 API 介面：由 Resource 名詞 (即 URI) 搭配有限的 Verb 動作 (即 HTTP Method)，加上不同的 Representation 格式 (即 Content Types) 所組成
-* [Richardson Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html) 將 REST 分成成熟度 Level 0、Level 1 - Resources、Level 2 - HTTP Verbs、Level 3 - Hypermedia Controls
+* [Richardson Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html) 將 REST 分成成熟度 Level 0、Level 1 - Resources、Level 2 - HTTP Verbs、Level 3 - Hypermedia Controls。常見的 API REST 成熟度會在 Level 2~3 之間。
 
 ### REST API 介面基礎
 
@@ -185,168 +185,165 @@ title: Web APIs 設計
        * example
 
  * 舉例: 拿活動資料
-   * GET /api/v1/events
-   * JSON Example: { "data": [....] }
+   * `GET /api/v1/events`
+   * JSON Example: `{ "data": [....] }`
  * 舉例: 新增活動資料
-   * POST /api/v1/events
+   * `POST /api/v1/events`
    * 參數:   
      * name: string
      * status: string ( draft 或 published)
    * 成功: HTTP status 200
-     * 範例: { "id": 123 }
+     * 範例: `{ "id": 123 }`
    * 失敗: HTTP status 400
    * 範例: ...
 
-### 文件工具
+### 文件相關工具
 
-   * http://swagger.io/
-   * http://raml.org/ 
-   * https://apiblueprint.org/
-   * https://apiary.io/
-   * https://www.opencredo.com/2015/07/28/rest-api-tooling-review/
-   * https://github.com/tripit/slate
+透過一些工具的幫忙，我們可以標準化文件的撰寫，進一步產生漂亮的文件格式，甚至產生一些樣本程式碼協助開發和測試：
+
+* <http://swagger.io/> 
+* <http://raml.org/>
+* <https://apiblueprint.org/>
+* <https://apiary.io/>
+* <https://www.opencredo.com/2015/07/28/rest-api-tooling-review/>
+* <https://github.com/tripit/slate>
 
 
 ### API 文件範例
 
-   * Dojo API Documentation
-   * https://developer.github.com/v3/
-   * https://stripe.com/docs/api#charge_object
-   * https://developer.paypal.com/docs/api/
-   * https://dev.twitter.com/rest/public
-   * https://developers.facebook.com/docs/graph-api
+* [Github](https://developer.github.com/v3/)
+* [Stripe](https://stripe.com/docs/api#charge_object)
+* [Paypal](https://developer.paypal.com/docs/api/)
+* [Twitter](https://dev.twitter.com/rest/public)
+* [Facebook](https://developers.facebook.com/docs/graph-api)
 
 ## Web API 測試
 
 Web APIs 建議由伺服器端撰寫自動化測試，最有效率且能保證正確性。
 不負責伺服器端的客戶端開發者，可以用以下方式進行人工測試：
 
- * Chrome extension: JSON formatter 或 JSON View https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc
+ * Chrome extension: JSON formatter 或 JSON View
  * Chrome extension: advanced-rest-client 或 postman
  * brew install httpie
  * App Store 的 Paw $890 (高級 HTTP client)
  * [Insomnia](https://insomnia.rest/) Free app
- * 怎麼將內網的 localhost 讓外面的人都看得到呢？
-   * 推薦 https://ngrok.com/ 這個工具
-   * 使用說明 https://tenten.co/blog/how-to-use-ngrok-to-connect-your-localhost/
+ * 怎麼將內網的 localhost 讓外部網路可以連線進來呢？
+   * 推薦 <https://ngrok.com/> 這個工具
+   * [使用說明介紹](https://tenten.co/blog/how-to-use-ngrok-to-connect-your-localhost/)
  
  
- ## Web API 設計美學
+## Web API 設計美學
  
- ### 設計技巧
+### 設計技巧
 
-*  HTTP request/response 的天性
-   * Stateless: 每個 requests 之間沒有前後文關係，每個 request 都必須帶有完整的資訊讓 server 可以完成操作，例如: 需要帶 token 才能識別使用者
-   * Atomic: 不應該用兩個 requests 去完成一個應該一起完成或一起失敗的動作，就像 DB 的 transaction 一樣。
-   * 另外，和 function call 相比，API 設計的粒度比較大。因為每次的 request/response 成本比較高。
- * REST 風格 vs. RPC 風格 
-   * 以 REST 概念為主、RPC 為輔。操作和運算 operate 類型的可用 RPC 概念來設計，例如：
-   * POST /calculate
-   * POST /translate 
-   * POST /convert 
+* HTTP request/response 的天性
+  * Stateless: 每個 requests 之間沒有前後文關係，每個 request 都必須帶有完整的資訊讓 server 可以完成操作，例如: 需要帶 token 才能識別使用者
+  * Atomic: 不應該用兩個 requests 去完成一個應該一起完成或一起失敗的動作，就像 DB 的 transaction 一樣。
+  * 另外，和 function call 相比，API 設計的粒度比較大。因為每次的 request/response 成本比較高。
+* REST 風格 vs. RPC 風格 
+  * 以 REST 概念為主、RPC 為輔。操作和運算 operate 類型的可用 RPC 概念來設計，例如：
+    * `POST /calculate`
+    * `POST /translate`
+    * `POST /convert`
 * JSON response 第一層用 hash，不要用 array
  * 如何處理分頁? 
    * Hypermedia API 和 HATEOAS 概念:
-     * http://en.wikipedia.org/wiki/HATEOAS
-     *  https://api.github.com/
-   * max_id 和 since_id 策略，例如 https://dev.twitter.com/rest/reference/get/statuses/user_timeline
- * 如何處理空值 null，建議不要完全砍掉，請留 null。
-   * { name: "Foo", display_name: null } 或 { name: "Foo" } 
- * 可以設計支援 Partial response
-   * GET /events?fields=id,name,created_at
- * 有些人設計愛用 header (REST 基本教義派會把 metadata 例如 version、token 都放 header 裡面)，有些人則喜歡放在 URL 和 body 裡面，用起來比較方便。前者例如 https://developer.github.com/v3/
-   * Idempotent Retry 特別是離線應用，搭配 UUID 作 PUT 操作
-     * https://ihower.tw/blog/archives/6483
-   * JSON 時間格式: 用 ISO 8601 標準 https://xkcd.com/1179/ 
-   * API Rate Limit
-   * 有沒有什麼設計標準?
-     * 有人在推廣，但不怎麼必要，畢竟有學習成本，卻沒什麼好處(?)
-     * http://jsonapi.org/
-     * http://stateless.co/hal_specification.html
-     * https://jwt.io/
-
-### 補充: Webhook API
-
-設計當某事件發生時，從網站 POST 資料到指定的網址，例如: Github 可以設定當有新 push 時，會通知你指定的網址：
-
-* 設計有哪些 callback 和內容格式
-* 提供介面讓使用者可以輸入 callback URL
-* 當事件發生時，非同步 trigger 送 request 到指定的 callback URL
+     * <http://en.wikipedia.org/wiki/HATEOAS>
+     * <https://api.github.com/>
+   * max_id 和 since_id 策略，例如 <https://dev.twitter.com/rest/reference/get/statuses/user_timeline>
+* 如何處理空值 null，建議不要完全砍掉，請留 null。例如 `{ name: "Foo", display_name: null }` 而不是 `{ name: "Foo" } `
+* 可以設計支援 Partial response
+  * `GET /events?fields=id,name,created_at`
+* 有些人設計愛用 header (REST 基本教義派會把 metadata 例如 version、token 都放 header 裡面)，有些人則喜歡放在 URL 和 body 裡面，用起來比較方便。前者例如 <https://developer.github.com/v3/>
+* Idempotent Retry 特別是離線應用，搭配 UUID 作 PUT 操作
+  * <https://ihower.tw/blog/archives/6483>
+* JSON 時間格式: 用 [ISO 8601 標準](https://zh.wikipedia.org/wiki/ISO_8601)
+* API Rate Limit，如果 API 會開放給外部使用者，通常會制定一個呼叫上限，例如 [Github](https://developer.github.com/v3/#rate-limiting) 是每小時 5000 requests。
+* 有沒有什麼設計標準?
+  * 有人在推廣，但不怎麼必要，畢竟有學習成本，卻沒什麼好處(?)
+  * <http://jsonapi.org/>
+  * <http://stateless.co/hal_specification.html>
+  * <https://jwt.io/>
 
 ### API Design Guideline
 
- * https://github.com/WhiteHouse/api-standards 美國白宮，有點簡單 
- * http://apigee.com/about/resources/ebooks/web-api-design 電子書
-   * https://pages.apigee.com/rs/apigee/images/api-design-ebook-2012-03.pdf 下載連結
-   * http://www.slideshare.net/apigee/restful-api-design-second-edition 這不錯
- * http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api
+ * <https://github.com/WhiteHouse/api-standards> 美國白宮，有點簡單 
+ * <http://apigee.com/about/resources/ebooks/web-api-design> 電子書
+   * <https://pages.apigee.com/rs/apigee/images/api-design-ebook-2012-03.pdf> PDF 下載連結
+   * <http://www.slideshare.net/apigee/restful-api-design-second-edition> 這不錯
+ * <http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api>
  * [Heroku HTTP API Design Guide](https://github.com/interagent/http-api-design)
 * [Microsoft REST API Guidelines](https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md) 僅供參考
 
 ### 除了REST 之外，還有什麼其他的設計風格?
 
 * 傳統 RPC：單一 URL endpoint，將方法呼叫和參數都包在 body 中
-  * [SOAP](https://zh.wikipedia.org/wiki/SOAP) 落伍了
+  * [SOAP](https://zh.wikipedia.org/wiki/SOAP) 落伍了，但傳產和銀行很愛用
   * [XML-RPC](https://zh.wikipedia.org/wiki/XML-RPC)
   * [JSON-RPC](https://en.wikipedia.org/wiki/JSON-RPC)
 * [GraphQL](https://facebook.github.io/react/blog/2015/05/01/graphql-introduction.html) Facebook 開源作品。第一眼看 GraphQL 覺得很強大，不過比起 REST 實作上還是複雜很多。如果用 REST 不覺得寫 ad-hoc query 管理上會痛的話，就沒有需要用 GraphQL 了。
-  * [The GitHub GraphQL API](http://githubengineering.com/the-github-graphql-api/)
+  * 範例 [The GitHub GraphQL API](http://githubengineering.com/the-github-graphql-api/)
 * [Falcor](http://netflix.github.io/falcor/) Netflix 開源作品
 
+### 補充: Webhook API
+
+上述的 REST API 都是從客戶端去伺服器存取資料，但是有時候我們希望反過來，當事件發生的時候，從伺服器端主動推資料過來，這樣我們就可以更即時且更有效率的做資料串接應用。
+
+有些網站就有提供 Webhook 的方式，提供你設定當某事件發生時，從網站 POST 資料到你指定的網址，例如: 你在 Github 專案的 Settings 裡面，可以找到 Webhooks 設定。這可以設定當有人 push code 或發 pull reuqest 時，Github 會將該事件資料 POST 到你指定的網址。
+
+當然，這種方式不適用於移動裝置，因為你的手機並沒有固定的 IP 位址。
 
 ## Web API 認證設計
 
 ### 登入 token 機制
 
-   * why? 
-     * 安全性(亂數產生的強度比密碼高、也可以加上 expired 時間)
-     * 獨立性(使用者改密碼可以不影響 token，除非手動產生過 token)
-   * 使用者用帳號密碼登入後，拿到專用 auth_token，之後每個 request 都必須帶這個  auth_token 參數
-     * 例如 POST /api/v1/login
-     * POST /api/v1/logout  清除 token
+* why? 
+  * 安全性(亂數產生的強度比密碼高、也可以加上 expired 時間)
+  * 獨立性(使用者改密碼可以不影響 token，除非手動產生過 token)
+* 使用者用帳號密碼登入後，拿到專用 auth_token，之後每個 request 都必須帶這個  auth_token 參數
+* `POST /api/v1/login` 帶參數帳號 `email` 和密碼 `password`，回傳 token
+* `POST /api/v1/logout` 帶參數 `token`，作用是重設一個新 token
 
 ### 如何支援 facebook 登入?
 
-   * 在手機端會自行實作 facebook 登入 (手機跟 Web 共用 facebook app ID)，拿到 access_token
-   * 可能需要用一樣的 app ID 了，這樣 fb user id 才會一樣
-   * 用手機端的 facebook access_token 進行登入 POST /api/v1/login
-   * 用手機傳來的 access_token 跟 facebook 再確認一次，沒問題再回傳 user_token
+* 在手機端會自行實作 facebook 登入 (手機跟 Web 共用 facebook app ID)，拿到 access_token
+* 需要用一樣的 facebook app ID，這樣 fb user id 才會一樣
+* 用手機端的 facebook access_token 進行登入 `POST /api/v1/login`
+* 用手機傳來的 access_token 跟 facebook 再確認一次，沒問題再回傳 user_token
 
 ### 其他安全性議題
 
 * 使用 HTTPS 
 * 用 HMAC 簽章 request
 
- ### API Provider 和 Client APP 認證常見手法
+### API Provider 和 Client APP 認證常見手法
 
-   * API provider 跟 API client 同一家，是 in-house 開發
-     * 使用者透過 輸入帳號密碼 即可拿到 token
-   * API provider  跟 API client 不同家，是開放 API 平台給別人用
-     * API client app 就是用戶
-       * 每個使用者直接給 access_token，最簡單
-     * API client 提供 其他用戶使用
-       * 提供單一的 App 專用 API Key，或是提供註冊多個 application 拿到 app id
-       * 使用 OAuth 機制進行授權
+* API provider 跟 API client 同一家，是 in-house 開發
+  * 使用者透過 輸入帳號密碼 即可拿到 token
+* API provider  跟 API client 不同家，是開放 API 平台給別人用
+  * 如果 API client app 就是用戶自己，可以直接在網頁上提供每個使用者 access_token，這樣最簡單
+  * 如果 API client 是要提供給下游用戶使用：可以提供單一的 App 專用 API Key，或是提供註冊多個 application 拿到 app id，然後使用 OAuth 機制進行授權
 
-
-## Web APIs 參考資料和 Open Data
+## Web APIs 參考資料和 Open Data 資料集
 
 ### 參考資料
 
- * http://mamund.site44.com/talks/2015-04-codepalousa/api-methodology.html RESTful API 設計參考文獻列表
- * Building Hypermedia APIs with HTML5 & Node
- * http://restcookbook.com/
- * http://shop.oreilly.com/product/9780596801694.do
- * http://shop.oreilly.com/product/9780596805838.do
+ * <http://mamund.site44.com/talks/2015-04-codepalousa/api-methodology.html> RESTful API 設計參考文獻列表
+ * Building Hypermedia APIs with HTML5 & Node, O'Reilly
+ * <http://restcookbook.com/>
+ * <http://shop.oreilly.com/product/9780596801694.do>
+ * <http://shop.oreilly.com/product/9780596805838.do>
 
-### Open data
+### Open Data 資料集
 
- * 政府開放資料 http://data.gov.tw/ 
- * g0v 開放資料 http://data.g0v.tw/ 
- * SheetHub http://sheethub.com 
- * 資策會 Social Event Radar http://api.ser.ideas.iii.org.tw/docs/#!/fb_fanpage_search 
- * 台北市政府開放資料 http://data.taipei/ 
-   * YouBike臺北市公共自行車即時資訊: http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=ddb80380-f1b3-4f8e-8016-7ed9cba571d5 
+[Open Data 開放資料](https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E8%B3%87%E6%96%99)是近年來的趨勢，政府不應該浪費預算在開發應用程式，而是只要將原始資料整理釋出，使用程式可以讀取的格式(例如XML或JSON)，不應該有授權限制也不索取費用。由民間進行應用程式開發：
+
+ * [政府開放資料](http://data.gov.tw/)
+ * [g0v 開放資料](http://data.g0v.tw/)
+ * [SheetHub](http://sheethub.com)
+ * [資策會 Social Event Radar](http://api.ser.ideas.iii.org.tw/docs/#!/fb_fanpage_search )
+ * [台北市政府開放資料](http://data.taipei/)
+   * [YouBike臺北市公共自行車即時資訊](http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=ddb80380-f1b3-4f8e-8016-7ed9cba571d5)
 * [A collective list of JSON APIs for use in web development](https://github.com/toddmotto/public-apis)
 
 

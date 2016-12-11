@@ -422,3 +422,11 @@ zipcodes table
    * 有一些資料是一開始就必須存在於 database，這樣 app 才能跑
 
 
+## 入門學習資料
+
+* [MySQL 超新手入門](http://www.codedata.com.tw/database/mysql-tutorial-getting-started) 從第0章至第5章CRUD與資料維護
+* [LaunchSchool: Introduction to SQL](https://launchschool.com/books/sql/read/introduction)
+* [Udacity: Intro to Relational Databases](https://www.udacity.com/course/intro-to-relational-databases--ud197) 看 Lesson 1, 2, 4，不用看 Lesson 3: Python DB-API 和 Lesson 5: Final Project。
+* [Learn SQL](https://www.codecademy.com/courses/learn-sql)
+* [SQL: Analyzing Business Metrics](https://www.codecademy.com/learn/sql-analyzing-business-metrics)
+* 深入淺出 SQL (O'Reilly)

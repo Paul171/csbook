@@ -162,4 +162,21 @@ title: 資料庫:進階篇
      * [Google Cloud Datastore](https://cloud.google.com/datastore/)
      * [Azure DocumentDB](http://azure.microsoft.com/zh-tw/services/documentdb/)
 
+## SQL 課程
 
+* [18+ Best Online Resources for Learning SQL and Database Concepts](http://www.vertabelo.com/blog/notes-from-the-lab/18-best-online-resources-for-learning-sql-and-database)
+* [SQL Tutorial](http://sqlzoo.net/wiki/SQL_Tutorial)
+* [The SQL Tutorial for Data Analysis](http://sqlschool.modeanalytics.com/)
+* [Intro to SQL: Querying and managing data](https://www.khanacademy.org/computing/computer-programming/sql)
+
+## SQL Exercise 題目
+
+* [SQL Exercises](https://en.wikibooks.org/wiki/SQL_Exercises)
+* [PostgreSQL Exercises](https://pgexercises.com/)
+ 
+## 參考資料
+
+* [A Tiny Intro to Database Systems](http://blog.dancrisan.com/a-tiny-intro-to-database-systems)
+* [如果有人問你數據庫的原理，叫他看這篇文章](http://blog.jobbole.com/100349/)
+* [Enterprise Rails: 資料庫篇](https://ihower.tw/blog/archives/3337) 關於 Rails 使用 RDBMS 的補充
+* NoSQL distilled 搞懂 NoSQL 的 15 堂課

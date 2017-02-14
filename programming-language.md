@@ -142,7 +142,7 @@ title: 程式語言:基礎篇
 
 ## 資料類型 Data Type   
    
-* Primitive Data Type 基本資料類型: 
+* Primitive/Value Data Type 基本資料類型: 
   * String
   * Number
     * Float (雙精確度 64 位元格式 IEEE 754 值)，JavaScript 只支援這種
@@ -154,10 +154,13 @@ title: 程式語言:基礎篇
   * Struct 具有屬性的複合資料類型 (JavaScript 無，Swift 有)
   * JavaScript 中只有 undefined 、 null 、 boolean 、 number 、 string 五種Primitive type
 * Reference/Object Data Types 參考資料類型，包括：
-  * 程式語言內建的 Data Type (資料結構、容器)，最常見是：
+  * 程式語言內建的 Data Type (資料結構、容器) 有些就是 Reference Data Type，例如在 Ruby/JavaScript/Python 中：
     * Array 有序容器，用整數當作索引
     * Hash (或稱作 Map 或 Dictionary ) 一種 Key-Value 的容器，用字串當作索引
   * 程序員自訂的複合資料類型。例如 C 語言的 struct 結構，在物件導向語言中則是類別 Class 和物件 Object。在 Introduction to Programming Language (進階篇) 會提到
+
+> 在 Swift 中，Array 和 Dictionary 是 [value type](https://developer.apple.com/swift/blog/?id=10)，而不是 Reference Type。
+
 * Strong-Typing 強型別 vs. Weak-Typing 弱型別: 會不會自動轉型，例如數字相加或字串相加時
   * JavaScript 是弱型別，因此 == 和 === 運算子是不一樣的
   * Ruby 是強型別

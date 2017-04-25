@@ -8,7 +8,9 @@ title: 程式設計基礎
 
  * 目標讀者: 程式設計初學者
  * 目的: 了解程式語言基本語法，包括標準輸出輸入、控制流程、變數、資料類型(數字、字串)、函式、陣列、雜湊、物件、檔案
- * Example Code: <https://github.com/ihower/programming-basics>
+ * Example Code:
+   * <https://github.com/ihower/programming-basics>
+   * <https://github.com/yangliyi/programming-basics-in-ruby>
  * 使用環境
    * Mac: 使用內建的 Ruby 和編輯器 <https://www.sublimetext.com/>
    * Non-Mac: 可使用 <https://c9.io/> 開一個 Custom 的 workspace
